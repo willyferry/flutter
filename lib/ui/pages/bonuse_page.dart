@@ -23,6 +23,7 @@ class BonusPage extends StatelessWidget {
               )
             ]),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -52,8 +53,81 @@ class BonusPage extends StatelessWidget {
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                       image: AssetImage('assets/icon_plane.png'),
-                    )))
+                    ))),
+                Text(
+                  'Pay',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
+                )
               ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 71),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Balance',
+                      style: whiteTextStyle.copyWith(
+                          fontSize: 14, fontWeight: light),
+                    ),
+                    Text(
+                      'Rp, 200.000',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 20,
+                        fontWeight: medium,
+                      ),
+                    )
+                  ],
+                ))
+          ],
+        ),
+      );
+    }
+
+    Widget startButton() {
+      return Container(
+        width: 220,
+        height: 55,
+        margin: const EdgeInsets.only(top: 20),
+        child: TextButton(
+          onPressed: () => {
+            // Navigator.pushNamed(context, '/bonus/detail')
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(defaultRadius)),
+          ),
+          child: Text(
+            'Start Watching Now',
+            style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
+          ),
+        ),
+      );
+    }
+
+    Widget title() {
+      return Container(
+        margin: EdgeInsets.only(top: 80),
+        child: Column(
+          children: [
+            Text(
+              'Bonus Page',
+              style: blackTextStyle.copyWith(
+                fontSize: 24,
+                fontWeight: medium,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'You can watch drakors for free here!',
+              style: greyTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: light,
+              ),
             ),
           ],
         ),
@@ -66,6 +140,8 @@ class BonusPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             imageHolder(),
+            title(),
+            startButton(),
           ],
         ),
       ),
