@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -41,27 +42,7 @@ class GetSartedPage extends StatelessWidget {
                 // margin in text
               ),
             ),
-            Container(
-              width: 220,
-              height: 55,
-              margin: const EdgeInsets.only(top: 50, bottom: 80),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/sign-up');
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: kPrimaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-                child: Text("Let's Watch Now!",
-                    style: whiteTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: medium,
-                    )),
-              ),
-            )
+            const Button(text: "Let's Watch Now!", routesName: '/sign-up'),
           ],
         ))
       ],

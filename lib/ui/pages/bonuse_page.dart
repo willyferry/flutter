@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -19,7 +20,7 @@ class BonusPage extends StatelessWidget {
               BoxShadow(
                 color: kPrimaryColor.withOpacity(0.5),
                 blurRadius: 50,
-                offset: Offset(0, 10),
+                offset: const Offset(0, 10),
               )
             ]),
         child: Column(
@@ -87,26 +88,6 @@ class BonusPage extends StatelessWidget {
       );
     }
 
-    Widget startButton() {
-      return Container(
-        width: 220,
-        height: 55,
-        margin: const EdgeInsets.only(top: 20),
-        child: TextButton(
-          onPressed: () => {Navigator.pushNamed(context, '/main-page')},
-          style: TextButton.styleFrom(
-            backgroundColor: kPrimaryColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(defaultRadius)),
-          ),
-          child: Text(
-            'Start Watching Now',
-            style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
-          ),
-        ),
-      );
-    }
-
     Widget title() {
       return Container(
         margin: const EdgeInsets.only(top: 80),
@@ -139,7 +120,7 @@ class BonusPage extends StatelessWidget {
           children: [
             imageHolder(),
             title(),
-            startButton(),
+            const Button(text: "Start Watching Now", routesName: '/main-page')
           ],
         ),
       ),
