@@ -1,5 +1,6 @@
 import 'package:airplane/ui/pages/bonuse_page.dart';
 import 'package:airplane/ui/pages/get_started_page.dart';
+import 'package:airplane/ui/pages/main_page.dart';
 import 'package:airplane/ui/pages/sign_up_page.dart';
 import 'package:airplane/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       '/get-started': (context) => const GetSartedPage(),
       '/sign-up': (context) => const SignUpPage(),
       '/bonus': (context) => const BonusPage(),
+      '/main-page': (context) => const MainPage(),
     });
   }
 }

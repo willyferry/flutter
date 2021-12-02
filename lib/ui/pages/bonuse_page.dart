@@ -93,9 +93,7 @@ class BonusPage extends StatelessWidget {
         height: 55,
         margin: const EdgeInsets.only(top: 20),
         child: TextButton(
-          onPressed: () => {
-            // Navigator.pushNamed(context, '/bonus/detail')
-          },
+          onPressed: () => {Navigator.pushNamed(context, '/main-page')},
           style: TextButton.styleFrom(
             backgroundColor: kPrimaryColor,
             shape: RoundedRectangleBorder(
@@ -111,7 +109,7 @@ class BonusPage extends StatelessWidget {
 
     Widget title() {
       return Container(
-        margin: EdgeInsets.only(top: 80),
+        margin: const EdgeInsets.only(top: 80),
         child: Column(
           children: [
             Text(
