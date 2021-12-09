@@ -1,4 +1,5 @@
 import 'package:airplane/ui/widgets/card_carousel.dart';
+import 'package:airplane/ui/widgets/card_container.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 
@@ -74,80 +75,29 @@ class HomePage extends StatelessWidget {
                 title: "Anu",
                 subtitle: "Jakarta",
                 imagePath: "assets/image_destination2.png",
-                score: "4.5",
+                score: "4.2",
               ),
               CardCarousel(
                 title: "Sorewa",
                 subtitle: "Japan",
                 imagePath: "assets/image_destination3.png",
-                score: "4.5",
+                score: "4.6",
               ),
               CardCarousel(
                 title: "Aree",
                 subtitle: "Kyoto",
                 imagePath: "assets/image_destination4.png",
-                score: "4.5",
+                score: "5.0",
               ),
               CardCarousel(
                 title: "Kono wa",
                 subtitle: "China",
                 imagePath: "assets/image_destination5.png",
-                score: "4.5",
+                score: "3.5",
               ),
             ],
           ),
         ),
-      );
-    }
-
-    Widget cardContainer(imagePath, title) {
-      return Row(
-        children: [
-          Container(
-              width: 200,
-              height: 100,
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.only(bottom: 16),
-              decoration: BoxDecoration(
-                color: kWhiteColor,
-                borderRadius: BorderRadius.circular(defaultRadius),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(imagePath),
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        title,
-                        style: blackTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: bold,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 6,
-                      ),
-                      Text(
-                        'Watch your favorit drakor',
-                        style: greyTextStyle.copyWith(
-                          fontSize: 14,
-                          fontWeight: light,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  )
-                ],
-              )),
-        ],
       );
     }
 
@@ -157,6 +107,7 @@ class HomePage extends StatelessWidget {
             top: 30,
             left: defaultMargin,
             right: defaultMargin,
+            bottom: 140,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,17 +115,37 @@ class HomePage extends StatelessWidget {
               Text(
                 'Popular Drakor',
                 style: blackTextStyle.copyWith(
-                  fontSize: 24,
-                  fontWeight: bold,
+                  fontSize: 18,
+                  fontWeight: semiBold,
                 ),
               ),
               const SizedBox(
                 height: 16,
               ),
-              cardContainer("assets/image_photo1.png", "Kapuas"),
-              cardContainer("assets/image_photo2.png", "Anu"),
-              cardContainer("assets/image_photo2.png", "Anu"),
-              cardContainer("assets/image_photo2.png", "Anu"),
+              const CardContainer(
+                title: "Kapuas",
+                subtitle: "Kalimantan Barat",
+                imagePath: "assets/image_photo1.png",
+                rating: "4.5",
+              ),
+              const CardContainer(
+                title: "Kyoto",
+                subtitle: "Japan",
+                imagePath: "assets/image_photo2.png",
+                rating: "4.3",
+              ),
+              const CardContainer(
+                title: "Amazon",
+                subtitle: "Luar Negeri",
+                imagePath: "assets/image_photo3.png",
+                rating: "4.9",
+              ),
+              const CardContainer(
+                title: "Sungai Jawi",
+                subtitle: "Pontianak",
+                imagePath: "assets/image_photo3.png",
+                rating: "4.4",
+              ),
             ],
           ));
     }
