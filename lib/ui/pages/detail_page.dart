@@ -1,3 +1,5 @@
+import 'package:airplane/ui/widgets/button.dart';
+import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 
@@ -160,7 +162,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 6,
                   ),
                   Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -192,7 +194,70 @@ class DetailPage extends StatelessWidget {
 
                   // NOTE: INTEREST
                   const SizedBox(
-                    height: 10,
+                    height: 6,
+                  ),
+                  Text(
+                    'Interest',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: const [
+                      InterestItem(title: 'Culture'),
+                      InterestItem(title: 'Culture'),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: const [
+                      InterestItem(title: 'Culture'),
+                      InterestItem(title: 'Culture'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            // NOTE BUY
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR. 2.500.000',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 16,
+                            fontWeight: medium,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          'Per Orang',
+                          style: greyTextStyle.copyWith(
+                            fontWeight: light,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Button(
+                    text: "Book Kontol!",
+                    routesName: '/detail-page',
+                    width: 170,
                   ),
                 ],
               ),
@@ -204,12 +269,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: kWhiteColor,
-      body: Stack(
-        children: [
-          backgroundTop(),
-          shadowCard(),
-          content(),
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            backgroundTop(),
+            shadowCard(),
+            content(),
+          ],
+        ),
       ),
     );
   }

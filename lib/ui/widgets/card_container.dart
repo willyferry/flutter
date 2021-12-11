@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 
@@ -18,9 +19,12 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/detail-page');
-      },
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const DetailPage(),
+        ),
+      ),
       child: Container(
         margin: const EdgeInsets.only(
           top: 16,

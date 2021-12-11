@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 
@@ -17,99 +18,107 @@ class CardCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      margin: EdgeInsets.only(
-        left: defaultMargin,
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const DetailPage(),
+        ),
       ),
-      padding: const EdgeInsets.only(
-        top: 10,
-        right: 10,
-        left: 10,
-        bottom: 20,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(defaultRadius),
-        color: kWhiteColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 180,
-            height: 220,
-            margin: const EdgeInsets.only(
-              bottom: 10,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(defaultRadius),
-              image: DecorationImage(
-                image: AssetImage(imagePath),
+      child: Container(
+        width: 200,
+        margin: EdgeInsets.only(
+          left: defaultMargin,
+        ),
+        padding: const EdgeInsets.only(
+          top: 10,
+          right: 10,
+          left: 10,
+          bottom: 20,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(defaultRadius),
+          color: kWhiteColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 180,
+              height: 220,
+              margin: const EdgeInsets.only(
+                bottom: 10,
               ),
-            ),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                width: 55,
-                height: 30,
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                  ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(defaultRadius),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 20,
-                      height: 20,
-                      margin: const EdgeInsets.only(
-                        right: 2,
-                      ),
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/icon_star.png'),
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 55,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: kWhiteColor,
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 20,
+                        height: 20,
+                        margin: const EdgeInsets.only(
+                          right: 2,
+                        ),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/icon_star.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    Text(
-                      score,
-                      style: blackTextStyle.copyWith(fontWeight: medium),
-                    ),
-                  ],
+                      Text(
+                        score,
+                        style: blackTextStyle.copyWith(fontWeight: medium),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(
-              left: 10,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: blackTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: medium,
+            Container(
+              margin: const EdgeInsets.only(
+                left: 10,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: medium,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  subtitle,
-                  style: greyTextStyle.copyWith(
-                    fontWeight: light,
+                  const SizedBox(
+                    height: 3,
                   ),
-                ),
-              ],
+                  Text(
+                    subtitle,
+                    style: greyTextStyle.copyWith(
+                      fontWeight: light,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
